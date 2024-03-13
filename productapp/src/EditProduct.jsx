@@ -34,10 +34,11 @@ const EditProduct = () => {
   
     const ProductUpdate = (e) => {
       e.preventDefault();
-  
+     console.log(product)
       productservice.editProduct(product)
         .then((res) => {
-          navigate("/");
+          setMsg("Product Updated Sucessfully");
+          navigate("/display");
         })
         .catch((error) => {
           console.log(error);
@@ -45,7 +46,7 @@ const EditProduct = () => {
     };
   
     return (
-      <>
+      
         <div className="container mt-3">
           <div className="row">
             <div className="col-md-6 offset-md-3">
@@ -104,7 +105,7 @@ const EditProduct = () => {
             </div>
           </div>
         </div>
-      </>
+      
     );
 }
 export default EditProduct;
